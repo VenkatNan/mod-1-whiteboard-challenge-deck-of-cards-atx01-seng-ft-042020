@@ -5,9 +5,10 @@ class Deck
     end
     def createDeck
         res = []
-        Card.suits.each {|s| Card.ranks.each {|r| res.append(Card.new(s, r))}}
+        Card.SUITS.each {|s| Card.RANKS.each {|r| res.append(Card.new(s, r))}}
         res
     end
+
     def choose_card
         self.cards.slice!(rand(self.cards.count))
     end
@@ -19,10 +20,10 @@ class Card
         @rank = rank
         @suit = suit
     end
-    def self.suits
+    def self.SUITS
         ["Hearts", "Clubs", "Diamonds", "Spades"]
     end
-    def self.ranks
+    def self.RANKS
         ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
     end
 end
